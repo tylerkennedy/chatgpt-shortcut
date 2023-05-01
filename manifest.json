@@ -10,7 +10,7 @@
   "icons": {
     "48": "public/icon.png"
   },
-  "omnibox": { "keyword" : "chatgpt" },
+  "omnibox": { "keyword" : "gpt" },
   "background": {
     "service_worker": "public/background.js"
   },

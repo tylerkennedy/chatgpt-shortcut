@@ -15,7 +15,7 @@
     "service_worker": "public/background.js"
   },
   "permissions": [
-    "tabs", "scripting", "activeTab"
+    "scripting", "activeTab"
   ],
   "host_permissions": [
     "https://chat.openai.com/"

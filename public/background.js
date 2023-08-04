@@ -26,9 +26,11 @@ async function enterPromptOnChatGPT(prompt) {
       const textInputElement = document.querySelector('textarea');
       // Type prompt and press enter
       textInputElement.value = prompt;
-      const submitButton = textInputElement.nextSibling;
-      submitButton.disabled = false;
-      submitButton.click();
+      const event1 = new Event('input', { bubbles: true, cancelable: true });
+      textInputElement.dispatchEvent(event1);
+      const submitButton = textInputElement.closest("form");
+      var event2 = new Event('submit', { bubbles: true, cancelable: true });
+      submitButton.dispatchEvent(event2);
 
       // Stop listening for mutations after initial prompt is submitted
       mutationInstance.disconnect();

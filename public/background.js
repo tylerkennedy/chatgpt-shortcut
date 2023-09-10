@@ -20,7 +20,26 @@ chrome.omnibox.onInputEntered.addListener(async function (text) {
 
 // After ChatGPT is launched, enter the user's prompt into the UI
 async function enterPromptOnChatGPT(prompt) {
+  async function loadSettings() {
+    const response = await chrome.storage.local.get(["gpt4"]);
+    return response.gpt4 || false;
+  }
+
+  const gpt4SettingEnabled = await loadSettings();
+
   const observer = new MutationObserver(function (mutations, mutationInstance) {
+
+    // Click GPT-4 button if enabled in settings
+    if (gpt4SettingEnabled) {
+      const buttons = document.querySelectorAll('button');
+      buttons.forEach((button) => {
+        if (button.textContent.trim() === 'GPT-4') {
+          button.click();
+          return;
+        }
+      });
+    }
+
     const headingElement = document.querySelector('h1')
     if (headingElement) {
       const textInputElement = document.querySelector('textarea');

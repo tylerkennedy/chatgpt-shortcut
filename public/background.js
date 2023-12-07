@@ -40,8 +40,6 @@ async function enterPromptOnChatGPT(prompt) {
       });
     }
 
-    const headingElement = document.querySelector('h1')
-    if (headingElement) {
       const textInputElement = document.querySelector('textarea');
       // Type prompt and press enter
       textInputElement.value = prompt;
@@ -53,7 +51,6 @@ async function enterPromptOnChatGPT(prompt) {
 
       // Stop listening for mutations after initial prompt is submitted
       mutationInstance.disconnect();
-    }
   });
   const config = { attributes: false, childList: true, subtree: true }
   observer.observe(document, config);

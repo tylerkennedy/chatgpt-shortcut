@@ -40,14 +40,21 @@ async function enterPromptOnChatGPT(prompt) {
       });
     }
 
-      const textInputElement = document.querySelector('textarea');
-      // Type prompt and press enter
-      textInputElement.value = prompt;
+      const textInputElement = document.querySelector('#prompt-textarea');
+      const paragraphElement = document.createElement('p');
+      // Set the inner text of the <p> element
+      paragraphElement.innerText = prompt;
+      textInputElement.replaceChildren(paragraphElement);
+
       const event1 = new Event('input', { bubbles: true, cancelable: true });
       textInputElement.dispatchEvent(event1);
       const submitButton = textInputElement.closest("form");
-      var event2 = new Event('submit', { bubbles: true, cancelable: true });
-      submitButton.dispatchEvent(event2);
+      const event2 = new Event('submit', { bubbles: true, cancelable: true });
+      
+      // Click submit after waiting 0.5 seconds
+      setTimeout(() => {
+        submitButton.dispatchEvent(event2);
+      }, 500);
 
       // Stop listening for mutations after initial prompt is submitted
       mutationInstance.disconnect();

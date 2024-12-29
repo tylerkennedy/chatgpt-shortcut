@@ -1,17 +1,19 @@
-# Chrome Extension Template
+# ChatGPT Shortcut
 
-This is a base template for building Chrome extensions. 
+This is a Chrome extension to open ChatGPT and insert a prompt from the address bar in Chrome.
 
-## Getting Started
+[Availble on the Chrome Web Store](https://chromewebstore.google.com/detail/chatgpt-shortcut-open-fro/ppjhahkjaabkjgaoelbokpgleaoeeboa?hl=en-US)
 
-* Fork or copy this repo to get a clean base template to start with
+To start a new ChatGPT conversation from the address bar type 'GPT' followed by your prompt in the address bar and press enter. 
 
-* Update `name`, `description`, `default_title`, `permissions`, and `host_permissions` in `manifest.json`
+Use this shortcut to access ChatGPT easier and quicker from anywhere in the browser.
 
-* Replace `icon.png` with a new icon for the extension
+## How To Guide:
 
-* `popup.js` is already embedded in `popup.html` and `content_script.js` is included on all urls.
+1. Install the ChatGPT Shortcut Extension
 
-* [Help setting up TailwindCSS](https://nachoiacovino.com/blog/how-to-setup-tailwind-css-in-a-vanilla-html-project) in the extension
+2. Log into ChatGPT with your browser (or create a free account)
 
-* Run `npm run watch` to watch for new changes and recompile TailwindCSS as updates are made in `popup.html`
+3. In any tab, type 'GPT' in the address bar followed by your prompt
+
+4. Press enter to open a new tab with ChatGPT and your prompt automatically filled in
